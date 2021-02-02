@@ -1,8 +1,13 @@
 import React from 'react'
-import { Card } from 'react-bootstrap'
+import { Card, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
+import { useSelector } from 'react-redux'
+
 const Comic = ({ comic }) => {
+  const userLogin = useSelector((state) => state.userLogin)
+  const { userInfo } = userLogin
+
   return (
     <Card className='my-3 p-3 rounded text-center'>
       <Link to={`/comics/${comic._id}`}>
@@ -24,6 +29,17 @@ const Comic = ({ comic }) => {
         <Card.Text as='h5'>{comic.year}</Card.Text>
         <Card.Text as='h5'>{comic.publisher}</Card.Text>
       </Card.Body>
+      {userInfo && userInfo.isAdmin && (
+        <>
+          <Button variant='outline-success' className='my-2 btn'>
+            Edit
+          </Button>
+
+          <Button variant='outline-danger' className='btn '>
+            x
+          </Button>
+        </>
+      )}
     </Card>
   )
 }
