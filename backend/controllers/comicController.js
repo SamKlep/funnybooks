@@ -5,14 +5,23 @@ import Comic from '../models/comicModel.js'
 // @route   GET /api/comics
 // @access  Public
 const getComics = asyncHandler(async (req, res) => {
-  const comic = await Comic.find({})
+  const pageSize = 10
+  const page = Number(req.query.pageNumber) || 1
+  const keyword = req.query.keyword
+    ? {
+        title: {
+          $regex: req.query.keyword,
+          $options: 'i',
+        },
+      }
+    : {}
 
-  if (comic) {
-    res.json(comic)
-  } else {
-    res.status(404)
-    throw new Error('Comic not found')
-  }
+  const count = await Comic.countDocuments({ ...keyword })
+  const comics = await Comic.find({ ...keyword })
+    .limit(pageSize)
+    .skip(pageSize * (page - 1))
+
+  res.json({ comics, page, pages: Math.ceil(count / pageSize) })
 })
 
 // @desc    Fetch single comic

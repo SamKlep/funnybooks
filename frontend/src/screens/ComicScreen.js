@@ -48,11 +48,13 @@ const ComicScreen = ({ match }) => {
                 )}
                 <ListGroup.Item>Issue: {comic.issue}</ListGroup.Item>
                 <ListGroup.Item>Year: {comic.year}</ListGroup.Item>
-                <ListGroup.Item>Publisher: {comic.brand}</ListGroup.Item>
-                <ListGroup.Item>Writer: {comic.author}</ListGroup.Item>
+                <ListGroup.Item>Publisher: {comic.publisher}</ListGroup.Item>
+                <ListGroup.Item>Writer: {comic.writer}</ListGroup.Item>
                 <ListGroup.Item>Artist: {comic.artist}</ListGroup.Item>
                 <ListGroup.Item>Price: ${comic.price}</ListGroup.Item>
-                <ListGroup.Item>{comic.description}</ListGroup.Item>
+                <ListGroup.Item>
+                  <Col>Quantity:{comic.countInStock}</Col>
+                </ListGroup.Item>
               </ListGroup>
             </Col>
             <Col md={3}>
@@ -60,18 +62,7 @@ const ComicScreen = ({ match }) => {
                 <ListGroup variant='flush'>
                   <ListGroup.Item>
                     <Row>
-                      <Col>Price:</Col>
-                      <Col>
-                        <strong>$ {comic.price}</strong>
-                      </Col>
-                    </Row>
-                  </ListGroup.Item>
-                  <ListGroup.Item>
-                    <Row>
-                      <Col>Status:</Col>
-                      <Col>
-                        {comic.countInStock > 0 ? 'In Stock' : 'Out Of Stock'}
-                      </Col>
+                      <Col>{comic.description}</Col>
                     </Row>
                   </ListGroup.Item>
 

@@ -1,31 +1,33 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios'
+import React, { useEffect } from 'react'
 import Loader from '../components/Loader'
 import { Row, Col } from 'react-bootstrap'
 import Comic from '../components/Comic'
+import Message from '../components/Message'
+import Paginate from '../components/Paginate'
+import { useDispatch, useSelector } from 'react-redux'
+import { listComics } from '../actions/comicActions'
 
-const HomeScreen = () => {
-  const [comics, setComics] = useState({})
-  const [loading, setLoading] = useState([])
+const HomeScreen = ({ match }) => {
+  const keyword = match.params.keyword
+
+  const pageNumber = match.params.pageNumber || 1
+
+  const dispatch = useDispatch()
+
+  const comicList = useSelector((state) => state.comicList)
+  const { loading, error, comics, page, pages } = comicList
 
   useEffect(() => {
-    setLoading(true)
-    axios
-      .get(`/api/comics`)
-      .then((response) => {
-        setComics(response.data)
-        console.log(response.data)
-        setLoading(false)
-      })
-      .catch((err) => {
-        console.log(err)
-      })
-  }, [])
+    dispatch(listComics(keyword, pageNumber))
+  }, [dispatch, keyword, pageNumber])
 
   return (
     <>
+      <h1>Latest Comics</h1>
       {loading ? (
         <Loader />
+      ) : error ? (
+        <Message variant='danger'>{error}</Message>
       ) : (
         <>
           <Row>
@@ -35,6 +37,11 @@ const HomeScreen = () => {
               </Col>
             ))}
           </Row>
+          <Paginate
+            pages={pages}
+            page={page}
+            keyword={keyword ? keyword : ''}
+          />
         </>
       )}
     </>

@@ -15,7 +15,7 @@ const Header = () => {
 
   return (
     <header>
-      <Navbar bg='info' variant='dark' expand='lg' collapseOnSelect>
+      <Navbar bg='light' variant='light' expand='lg' collapseOnSelect>
         <Container>
           <LinkContainer to='/'>
             <Navbar.Brand>
@@ -27,11 +27,17 @@ const Header = () => {
           <Navbar.Collapse id='basic-navbar-nav'>
             {/* <Route render={({ history }) => <SearchBox history={history} />} /> */}
             <Nav className='ml-auto'>
+              <LinkContainer to='/comics'>
+                <Nav.Link>
+                  <i className='fas fa-shopping-cart'></i> Comics
+                </Nav.Link>
+              </LinkContainer>
               <LinkContainer to='/characters'>
                 <Nav.Link>
                   <i className='fas fa-shopping-cart'></i> Characters
                 </Nav.Link>
               </LinkContainer>
+
               {userInfo ? (
                 <NavDropdown title={userInfo.name} id='username'>
                   <LinkContainer to='/profile'>
@@ -56,8 +62,8 @@ const Header = () => {
                   <LinkContainer to='/admin/comiclist'>
                     <NavDropdown.Item>Comics</NavDropdown.Item>
                   </LinkContainer>
-                  <LinkContainer to='/admin/orderlist'>
-                    <NavDropdown.Item>Orders</NavDropdown.Item>
+                  <LinkContainer to='/admin/characterlist'>
+                    <NavDropdown.Item>Characters</NavDropdown.Item>
                   </LinkContainer>
                 </NavDropdown>
               )}
