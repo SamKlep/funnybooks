@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-
-import { Form, Button } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import { Form, Button, Row, Col } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
@@ -58,7 +58,7 @@ const LoginScreen = ({ location, history }) => {
           </Button>
         </Form>
 
-        {/* <Row className='py-3'>
+        <Row className='py-3'>
           <Col>
             New Visitor?{' '}
             <Link
@@ -66,7 +66,7 @@ const LoginScreen = ({ location, history }) => {
               Register
             </Link>
           </Col>
-        </Row> */}
+        </Row>
       </FormContainer>
     </div>
   )
