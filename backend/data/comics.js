@@ -14,7 +14,6 @@ const comics = [
       'At the Native American reservation near Hartsdale, New Mexico, the Puma undergoes a challenge to prove that he is still worthy of his power. With the challenge over, his uncle Joseph Threetrees still thinks he acted inappropriately. He explains that he was chosen to protect the tribe from "He Who Comes From Beyond".',
     image: '/images/ssm-gsa-1.jpg',
     brand: 'Marvel',
-
     price: 10,
     countInStock: 3,
     condition: 9.2,
@@ -34,7 +33,6 @@ const comics = [
     description: 'No synopsis written yet.',
     image: '/images/ssm-dsa-1.jpg',
     brand: 'Marvel',
-
     price: 5,
     countInStock: 1,
     condition: 9.6,
@@ -54,7 +52,6 @@ const comics = [
     description: 'No synopsis written yet.',
     image: '/images/ssm-gsa-6.jpg',
     brand: 'Marvel',
-
     price: 5,
     countInStock: 5,
     condition: 8.6,
@@ -75,7 +72,6 @@ const comics = [
       'On a rainy night a group of criminals breaks into the vault of the First National Bank by breaking their way in from underneath. They steal as much money as they can from the vault and make their escape. However, as they exit the sewers they are attacked by Spider-Man.',
     image: '/images/ssm-a-4.jpg',
     brand: 'Marvel',
-
     price: 9,
     countInStock: 1,
     condition: 8.6,
@@ -96,7 +92,6 @@ const comics = [
       "Spider-Man is on his way to the scene of his last battle against Dr. Octopus when he stops briefly to stop a collapsing wall. Returning to the construction site where the battle took place, Spider-Man finds what he came looking for: One of Octopus's arms which broke off in the fight.",
     image: '/images/ssm-ksa-1.jpg',
     brand: 'Marvel',
-
     price: 14,
     countInStock: 1,
     condition: 8.7,
@@ -117,7 +112,6 @@ const comics = [
       "While about to break up a Maggia theft operation, Spider-Man is beaten to the punch by a masked man named the Rapier. Spider-Man joins in and helps the Rapier, who has been making press for his heroic deeds against organized crime. Although thankful for Spider-Man's help, the Rapier blows off Spidey, leaving the wall-crawler to wonder about the Rapier as he returns to his home and calls his Aunt May.",
     image: '/images/ssm-ksa-2.jpg',
     brand: 'Marvel',
-
     price: 10,
     countInStock: 1,
     condition: 9.1,
@@ -138,7 +132,6 @@ const comics = [
       'Spider-Man goes about his daily routine as Norman Osborn prepares for the Gathering of Five. Mary Jane considers returning to modeling.',
     image: '/images/ssm-262.jpg',
     brand: 'Marvel',
-
     price: 3,
     countInStock: 1,
     condition: 9.1,
@@ -158,7 +151,6 @@ const comics = [
     description: 'Synopsis not yet written.',
     image: '/images/ssm-263.jpg',
     brand: 'Marvel',
-
     price: 3.5,
     countInStock: 1,
     condition: 9.1,
@@ -179,7 +171,6 @@ const comics = [
       'Spider-Man is out on patrol in the pouring rain, the weather that fits his current mood. His mind is focused on the fact that the two people who were claiming to be his parents were actually artificial life forms created by the Chameleon, as part of a plot orchestrated by the late Harry Osborn, the Green Goblin.',
     image: '/images/ssm-212.jpg',
     brand: 'Marvel',
-
     price: 8,
     countInStock: 1,
     condition: 9.3,
@@ -200,7 +191,6 @@ const comics = [
       "After a busy night on patrol, Spider-Man when he hears a police siren alerting him of another crime. The wall-crawler decides to investigate it as Peter Parker. Changing out of his costume, he thinks about he hasn't been out of costume in a while and wonders if his alter-ego still has a job with the Daily Bugle.",
     image: '/images/ssm-213.jpg',
     brand: 'Marvel',
-
     price: 8,
     countInStock: 1,
     condition: 9.3,
@@ -221,7 +211,6 @@ const comics = [
       "In the sewers below New York City, something has scared the rats that make it their home. The racket also attracts the attention of some slimy creature that also dwells in the sewers. Not far away, the Scorpion is on a rampage because he is on his wit's end.",
     image: '/images/ssm-215.jpg',
     brand: 'Marvel',
-
     price: 8,
     countInStock: 1,
     condition: 9.5,
@@ -242,7 +231,6 @@ const comics = [
       'After escaping Spider-Man, Bloody Mary tracks down Jack Morray, a man with a history of abusing women. She is about to shoot him with her sniper rifle but decides against it, wanting to kill him up close and personal so he knows why he is dying.',
     image: '/images/ssm-214.jpg',
     brand: 'Marvel',
-
     price: 14,
     countInStock: 2,
     condition: 9.3,
@@ -264,11 +252,52 @@ const comics = [
       'In the sewers of Manhattan, a strange mass of green slime crawls through the tunnels consuming everything that comes into its path. Elsewhere in the sewers, Mac Gargan spends time enjoying himself in his hideout, decked out with amenities from his friend Phillip Cussler, Sr.',
     image: '/images/ssm-216.jpg',
     brand: 'Marvel',
-
     price: 12,
     countInStock: 2,
     condition: 9.3,
     numReviews: 1,
+  },
+
+  {
+    title: 'Peter Parker, The Spectacular Spider-Man',
+    subtitle: 'Enter Lightmaster!',
+    publisher: 'Marvel',
+    issue: 3,
+    year: 1977,
+    age: 'Bronze',
+    writer: 'Gerry Conway',
+    artist: 'Al Milgrom, Sal Buscema',
+    character: 'Spider-Man',
+    category: 'super-hero',
+    description:
+      'While out on patrol looking for the Tarantula and seeking to rescue Chancellor Gorman, Spider-Man saves an old man from a mugging. Meanwhile, the Tarantula revives after being knocked out by his mysterious employer and is about to escape when he is attacked by said employer, who reveals himself as a new costumed criminal known as Lightmaster. Lightmaster then decides to deal with the situation on his own.',
+    image: '/images/ssm-3.jpg',
+    brand: 'Marvel',
+    price: 30,
+    countInStock: 1,
+    condition: 8.5,
+    numReviews: 0,
+  },
+
+  {
+    title: 'Peter Parker, The Spectacular Spider-Man',
+    subtitle: 'The Vulture Is a Bird of Prey',
+    publisher: 'Marvel',
+    issue: 4,
+    year: 1977,
+    age: 'Bronze',
+    writer: 'Archie Goodwin',
+    artist: 'Sal Buscema',
+    character: 'Spider-Man',
+    category: 'super-hero',
+    description:
+      "A small-time hood is chased down the street by the Vulture. Not aware of who his mark was, the man tries to beg for forgiveness as he was only doing his job. However, the Vulture is only interested in retribution and carries the thug high up into the sky. The screams of the Vulture's victim wake up Peter Parker, who is sleeping in his Chelsea apartment. Spider-Man looks out the window and sees nothing, unaware that the shouts were coming from overhead. Thinking he dreamed the whole thing, Peter returns to bed, needing to rest after his battle with the Lizard and Stegron the Dinosaur Man. Meanwhile, the Vulture then tosses the thug into the Hudson River for daring to try and extort him for protection money. Later, this thug returns to his boss, the mobster known as Morgan to tell him that the Vulture is operating out of a fix-it shop. Morgan finds this amusing given the defeats of both Kingpin and Hammerhead have left a power vacuum in the underworld. Morgan decides to try and make allies with the Vulture so his gang can expand out of Harlem and take over the entire underworld.",
+    image: '/images/ssm-4.jpg',
+    brand: 'Marvel',
+    price: 18,
+    countInStock: 1,
+    condition: 9,
+    numReviews: 0,
   },
 ]
 

@@ -29,12 +29,12 @@ const Header = () => {
             <Nav className='ml-auto'>
               <LinkContainer to='/comics'>
                 <Nav.Link>
-                  <i className='fas fa-shopping-cart'></i> Comics
+                  <i className='fas fa-book-open'></i> Comics
                 </Nav.Link>
               </LinkContainer>
               <LinkContainer to='/characters'>
                 <Nav.Link>
-                  <i className='fas fa-shopping-cart'></i> Characters
+                  <i className='fas fa-mask'></i> Characters
                 </Nav.Link>
               </LinkContainer>
 
