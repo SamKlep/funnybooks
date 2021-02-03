@@ -7,6 +7,7 @@ import connectDB from './config/db.js'
 import path from 'path'
 
 import comicRoutes from './routes/comicRoutes.js'
+import characterRoutes from './routes/characterRoutes.js'
 import userRoutes from './routes/userRoutes.js'
 
 dotenv.config()
@@ -23,6 +24,7 @@ app.use(express.json())
 
 app.use('/api/comics', comicRoutes)
 app.use('/api/users', userRoutes)
+app.use('/api/characters', characterRoutes)
 
 app.get('/', (req, res) => {
   res.send('API is running....')

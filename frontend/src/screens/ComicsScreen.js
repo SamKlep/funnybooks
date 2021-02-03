@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import Loader from '../components/Loader'
-import { Row, Col } from 'react-bootstrap'
+import { Col, Row, DropdownButton, Dropdown, Container } from 'react-bootstrap'
 import Comic from '../components/Comic'
 import Message from '../components/Message'
 import Paginate from '../components/Paginate'
@@ -24,6 +24,21 @@ const ComicsScreen = ({ match }) => {
   return (
     <>
       <h1>Comics</h1>
+      <Container>
+        <Row className='filter-div'>
+          <Col className='text-center'>
+            <DropdownButton
+              variant='info'
+              id='dropdown-basic-button'
+              title='Filter'>
+              <Dropdown.Item href='#/action-1'>Spectacular</Dropdown.Item>
+              <Dropdown.Item href='#/action-2'>Amazing</Dropdown.Item>
+              <Dropdown.Item href='#/action-3'>Superior</Dropdown.Item>
+            </DropdownButton>
+          </Col>
+        </Row>
+      </Container>
+
       {loading ? (
         <Loader />
       ) : error ? (
