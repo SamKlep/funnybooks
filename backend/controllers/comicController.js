@@ -39,10 +39,37 @@ const getComicById = asyncHandler(async (req, res) => {
 })
 
 // @desc    Create a comic
-// @route   POST /api/comics/:id
+// @route   POST /api/comics
+// @access  Private/Admin
+// const createComic = asyncHandler(async (req, res) => {
+//   const comic = await Comic.create(req.body)
+
+//   const createdComic = await comic.save()
+//   res.status(201).json(createdComic)
+// })
+
+// @desc    Create a comic
+// @route   POST /api/comics
 // @access  Private/Admin
 const createComic = asyncHandler(async (req, res) => {
-  const comic = await Comic.create(req.body)
+  const comic = new Comic({
+    title: 'Sample title',
+    subtitle: 'Sample subtitle',
+    price: 0,
+    user: req.user._id,
+    image: '/images/sample.jpg',
+    publisher: 'Sample publisher',
+    issue: 0,
+    year: 0,
+    age: 'Sample publisher',
+    writer: 'Sample publisher',
+    artist: 'Sample publisher',
+    character: 'Sample publisher',
+    category: 'Sample category',
+    countInStock: 0,
+    condition: 0,
+    description: 'Sample description',
+  })
 
   const createdComic = await comic.save()
   res.status(201).json(createdComic)

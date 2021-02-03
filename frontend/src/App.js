@@ -8,6 +8,10 @@ import ComicScreen from './screens/ComicScreen'
 import LoginScreen from './screens/LoginScreen'
 import RegisterScreen from './screens/RegisterScreen'
 import ProfileScreen from './screens/ProfileScreen'
+import UserListScreen from './screens/UserListScreen'
+import ComicListScreen from './screens/ComicListScreen'
+import ComicEditScreen from './screens/ComicEditScreen'
+import UserEditScreen from './screens/UserEditScreen'
 
 function App() {
   return (
@@ -19,6 +23,15 @@ function App() {
           <Route path='/login' component={LoginScreen} />
           <Route path='/register' component={RegisterScreen} />
           <Route path='/profile' component={ProfileScreen} />
+          <Route path='/admin/userlist' component={UserListScreen} />
+          <Route path='/admin/users/:id/edit' component={UserEditScreen} />
+          <Route path='/admin/comics/:id/edit' component={ComicEditScreen} />
+          <Route path='/admin/comiclist' component={ComicListScreen} exact />
+          <Route
+            path='/admin/comiclist/:pageNumber'
+            component={ComicListScreen}
+            exact
+          />
           <Route path='/page/:pageNumber' component={HomeScreen} />
           <Route path='/' component={HomeScreen} exact />
         </Container>
