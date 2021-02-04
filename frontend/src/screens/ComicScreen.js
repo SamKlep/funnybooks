@@ -23,7 +23,7 @@ const ComicScreen = ({ match }) => {
 
   return (
     <>
-      <Link className='btn btn-light my-3' to='/'>
+      <Link className='char-shadow btn btn-light my-3' to='/'>
         Go Back
       </Link>
       {loading ? (
@@ -31,7 +31,7 @@ const ComicScreen = ({ match }) => {
       ) : (
         <>
           <Row>
-            <Col md={6}>
+            <Col>
               <Image
                 className='char-shadow'
                 src={comic.image}
@@ -39,14 +39,16 @@ const ComicScreen = ({ match }) => {
                 fluid
               />
             </Col>
-            <Col md={3}>
-              <ListGroup className='char-shadow' variant='flush text-center'>
+            <Col className='align-self-center'>
+              <ListGroup
+                className='list-group-hover mx-auto char-shadow'
+                variant='flush text-center'>
                 <ListGroup.Item>
-                  <h3>{comic.title}</h3>
+                  <h2 className='text-info'>{comic.title}</h2>
                 </ListGroup.Item>
                 {comic.subtitle ? (
                   <ListGroup.Item>
-                    <h5>{comic.subtitle}</h5>
+                    <h4 className='text-warning'>{comic.subtitle}</h4>
                   </ListGroup.Item>
                 ) : (
                   ''
@@ -56,22 +58,25 @@ const ComicScreen = ({ match }) => {
                 <ListGroup.Item>Publisher: {comic.publisher}</ListGroup.Item>
                 <ListGroup.Item>Writer: {comic.writer}</ListGroup.Item>
                 <ListGroup.Item>Artist: {comic.artist}</ListGroup.Item>
-                <ListGroup.Item>Price: ${comic.price}</ListGroup.Item>
                 <ListGroup.Item>
-                  <Col>Quantity:{comic.countInStock}</Col>
+                  Price: <span className='text-success'>${comic.price}</span>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Col>Quantity: {comic.countInStock}</Col>
                 </ListGroup.Item>
               </ListGroup>
             </Col>
-            <Col md={3}>
-              <Card>
-                <ListGroup className='char-shadow' variant='flush'>
-                  <ListGroup.Item>
-                    <Row>
-                      <Col>{comic.description}</Col>
-                    </Row>
-                  </ListGroup.Item>
+            <Row className='mt-5'>
+              <Col className='mx-auto' md={8}>
+                <Card>
+                  <ListGroup className='char-shadow' variant='flush'>
+                    <ListGroup.Item>
+                      <Row>
+                        <Col>{comic.description}</Col>
+                      </Row>
+                    </ListGroup.Item>
 
-                  {/* <ListGroup.Item>
+                    {/* <ListGroup.Item>
                     <Button
                       onClick={addToCartHandler}
                       className='btn-block'
@@ -80,9 +85,10 @@ const ComicScreen = ({ match }) => {
                       Add To Cart
                     </Button>
                   </ListGroup.Item> */}
-                </ListGroup>
-              </Card>
-            </Col>
+                  </ListGroup>
+                </Card>
+              </Col>
+            </Row>
           </Row>
         </>
       )}

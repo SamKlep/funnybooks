@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import Loader from '../components/Loader'
-import { Col, Row, DropdownButton, Dropdown, Container } from 'react-bootstrap'
-import Comic from '../components/Comic'
+import { Col, Row } from 'react-bootstrap'
 import Message from '../components/Message'
 import Paginate from '../components/Paginate'
 import { useDispatch, useSelector } from 'react-redux'
