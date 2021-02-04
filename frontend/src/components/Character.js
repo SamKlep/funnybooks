@@ -10,12 +10,16 @@ const Character = ({ character }) => {
       </Link>
       <Card.Body>
         <Link to={`/characters/${character._id}`}>
-          <Card.Title as='div'>
+          <Card.Title as='h2'>
             <strong>{character.name}</strong>
           </Card.Title>
           <Card.Title as='div'>
             <strong>
-              {character.realName ? <h5>{character.realName}</h5> : ''}
+              {character.realName ? (
+                <h4 className='text-light'>{character.realName}</h4>
+              ) : (
+                ''
+              )}
             </strong>
           </Card.Title>
         </Link>
@@ -31,8 +35,6 @@ const Character = ({ character }) => {
             </Badge>
           )}
         </Card.Text>
-        <Card.Text as='h5'>{character.firstAppearance}</Card.Text>
-        <Card.Text as='h5'>{character.publisher}</Card.Text>
       </Card.Body>
     </Card>
   )

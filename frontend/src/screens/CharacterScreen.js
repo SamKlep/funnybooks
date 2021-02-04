@@ -54,15 +54,17 @@ const CharacterScreen = ({ match }) => {
                   ''
                 )}
                 <ListGroup.Item>
-                  {character.good ? (
-                    <Badge variant='success' pill>
-                      Hero
-                    </Badge>
-                  ) : (
-                    <Badge className='villain-color' pill>
-                      Villain
-                    </Badge>
-                  )}
+                  <Card.Text as='h4'>
+                    {character.good ? (
+                      <Badge variant='success' pill>
+                        Hero
+                      </Badge>
+                    ) : (
+                      <Badge className='villain-color' pill>
+                        Villain
+                      </Badge>
+                    )}
+                  </Card.Text>
                 </ListGroup.Item>
                 <ListGroup.Item>
                   First Appearance: {character.firstAppearance}
@@ -76,8 +78,6 @@ const CharacterScreen = ({ match }) => {
                 <ListGroup.Item>
                   Home Universe: {character.homeUniverse}
                 </ListGroup.Item>
-
-                <ListGroup.Item></ListGroup.Item>
                 <ListGroup.Item>Status: {character.status}</ListGroup.Item>
                 <ListGroup.Item>
                   Citizenship: {character.citizenship}
