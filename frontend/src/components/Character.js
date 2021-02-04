@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const Character = ({ character }) => {
   return (
-    <Card className='my-3 p-3 rounded text-center'>
+    <Card className='my-3 p-3 rounded text-center char-shadow'>
       <Link to={`/characters/${character._id}`}>
         <Card.Img src={character.image}></Card.Img>
       </Link>
@@ -21,9 +21,15 @@ const Character = ({ character }) => {
         </Link>
 
         <Card.Text as='h3'>
-          <Badge variant='info' pill>
-            # {character.alignments}
-          </Badge>
+          {character.good ? (
+            <Badge variant='success' pill>
+              Hero
+            </Badge>
+          ) : (
+            <Badge className='villain-color' pill>
+              VIllain
+            </Badge>
+          )}
         </Card.Text>
         <Card.Text as='h5'>{character.firstAppearance}</Card.Text>
         <Card.Text as='h5'>{character.publisher}</Card.Text>

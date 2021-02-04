@@ -49,7 +49,8 @@ const createCharacter = asyncHandler(async (req, res) => {
     user: req.user._id,
     createdBy: 'Sample creator',
     homeUniverse: 'Sample home',
-    alignments: 'sample alignment',
+    good: false,
+    evil: false,
     status: 'Sample status',
     placeOfBirth: 'Sample birthplace',
     citizenship: 'Sample citizenship',
@@ -75,7 +76,8 @@ const updateCharacter = asyncHandler(async (req, res) => {
     createdBy,
     image,
     homeUniverse,
-    alignments,
+    good,
+    evil,
     status,
     placeOfBirth,
     citizenship,
@@ -93,7 +95,8 @@ const updateCharacter = asyncHandler(async (req, res) => {
     character.firstAppearance = firstAppearance
     character.createdBy = createdBy
     character.homeUniverse = homeUniverse
-    character.alignments = alignments
+    character.good = good
+    character.evil = evil
     character.status = status
     character.image = image
     character.placeOfBirth = placeOfBirth

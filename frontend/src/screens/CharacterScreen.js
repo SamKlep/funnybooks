@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import Loader from '../components/Loader'
 import { Link } from 'react-router-dom'
-import { Row, Col, Image, ListGroup, Card } from 'react-bootstrap'
+import { Row, Col, Image, ListGroup, Card, Badge } from 'react-bootstrap'
 
 const CharacterScreen = ({ match }) => {
   const [character, setCharacter] = useState({})
@@ -23,7 +23,7 @@ const CharacterScreen = ({ match }) => {
 
   return (
     <>
-      <Link className='btn btn-light my-3' to='/'>
+      <Link className='btn btn-light my-3' to='/characters'>
         Go Back
       </Link>
       {loading ? (
@@ -31,44 +31,80 @@ const CharacterScreen = ({ match }) => {
       ) : (
         <>
           <Row>
-            <Col md={6}>
-              <Image src={character.image} alt={character.name} fluid />
+            <Col>
+              <Image
+                className='character-img char-shadow'
+                src={character.image}
+                alt={character.name}
+                fluid
+              />
             </Col>
-            <Col md={3}>
-              <ListGroup variant='flush text-center'>
+            <Col>
+              <ListGroup
+                className='list-group-hover char-shadow'
+                variant='flush text-center'>
                 <ListGroup.Item>
-                  <h3>{character.title}</h3>
+                  <h2 className='text-info'>{character.name}</h2>
                 </ListGroup.Item>
-                {character.subtitle ? (
+                {character.realName ? (
                   <ListGroup.Item>
-                    <h5>{character.subtitle}</h5>
+                    <h4 className='text-warning'>{character.realName}</h4>
                   </ListGroup.Item>
                 ) : (
                   ''
                 )}
-                <ListGroup.Item>Issue: {character.issue}</ListGroup.Item>
-                <ListGroup.Item>Year: {character.year}</ListGroup.Item>
+                <ListGroup.Item>
+                  First Appearance: {character.firstAppearance}
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  Created By: {character.createdBy}
+                </ListGroup.Item>
                 <ListGroup.Item>
                   Publisher: {character.publisher}
                 </ListGroup.Item>
-                <ListGroup.Item>Writer: {character.writer}</ListGroup.Item>
-                <ListGroup.Item>Artist: {character.artist}</ListGroup.Item>
-                <ListGroup.Item>Price: ${character.price}</ListGroup.Item>
                 <ListGroup.Item>
-                  <Col>Quantity:{character.countInStock}</Col>
+                  Home Universe: {character.homeUniverse}
+                </ListGroup.Item>
+
+                <ListGroup.Item>
+                  {character.good ? (
+                    <Badge variant='success' pill>
+                      Hero
+                    </Badge>
+                  ) : (
+                    <Badge className='villain-color' pill>
+                      Villain
+                    </Badge>
+                  )}
+                </ListGroup.Item>
+                <ListGroup.Item>Status: {character.status}</ListGroup.Item>
+                <ListGroup.Item>
+                  Citizenship: {character.citizenship}
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Col>Birthplace:{character.placeOfBirth}</Col>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Col>Base:{character.base}</Col>
                 </ListGroup.Item>
               </ListGroup>
             </Col>
-            <Col md={3}>
-              <Card>
-                <ListGroup variant='flush'>
-                  <ListGroup.Item>
-                    <Row>
-                      <Col>{character.description}</Col>
-                    </Row>
-                  </ListGroup.Item>
+            <Row>
+              <Col className='mt-5 mx-auto' lg={8}>
+                <Card>
+                  <ListGroup className='char-shadow' variant='flush'>
+                    <ListGroup.Item>
+                      <Row>
+                        <Col>Powers: {character.powers}</Col>
+                      </Row>
+                    </ListGroup.Item>
+                    <ListGroup.Item>
+                      <Row>
+                        <Col>{character.bio}</Col>
+                      </Row>
+                    </ListGroup.Item>
 
-                  {/* <ListGroup.Item>
+                    {/* <ListGroup.Item>
                     <Button
                       onClick={addToCartHandler}
                       className='btn-block'
@@ -77,9 +113,10 @@ const CharacterScreen = ({ match }) => {
                       Add To Cart
                     </Button>
                   </ListGroup.Item> */}
-                </ListGroup>
-              </Card>
-            </Col>
+                  </ListGroup>
+                </Card>
+              </Col>
+            </Row>
           </Row>
         </>
       )}

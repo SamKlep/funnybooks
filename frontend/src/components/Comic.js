@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const Comic = ({ comic }) => {
   return (
-    <Card className='my-3 p-3 rounded text-center'>
+    <Card className='my-3 p-3 rounded text-center char-shadow'>
       <Link to={`/comics/${comic._id}`}>
         <Card.Img src={comic.image}></Card.Img>
       </Link>

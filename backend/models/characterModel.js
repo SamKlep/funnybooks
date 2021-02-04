@@ -21,9 +21,13 @@ const characterSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    alignments: {
-      type: String,
-      required: true,
+    good: {
+      type: Boolean,
+      default: false,
+    },
+    evil: {
+      type: Boolean,
+      default: false,
     },
     status: {
       type: String,

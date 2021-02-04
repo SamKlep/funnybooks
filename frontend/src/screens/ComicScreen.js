@@ -32,10 +32,15 @@ const ComicScreen = ({ match }) => {
         <>
           <Row>
             <Col md={6}>
-              <Image src={comic.image} alt={comic.name} fluid />
+              <Image
+                className='char-shadow'
+                src={comic.image}
+                alt={comic.name}
+                fluid
+              />
             </Col>
             <Col md={3}>
-              <ListGroup variant='flush text-center'>
+              <ListGroup className='char-shadow' variant='flush text-center'>
                 <ListGroup.Item>
                   <h3>{comic.title}</h3>
                 </ListGroup.Item>
@@ -59,7 +64,7 @@ const ComicScreen = ({ match }) => {
             </Col>
             <Col md={3}>
               <Card>
-                <ListGroup variant='flush'>
+                <ListGroup className='char-shadow' variant='flush'>
                   <ListGroup.Item>
                     <Row>
                       <Col>{comic.description}</Col>
