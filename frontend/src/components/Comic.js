@@ -32,7 +32,13 @@ const Comic = ({ comic }) => {
               <strong>{comic.title}</strong>
             </Card.Title>
             <Card.Title as='div'>
-              <strong>{comic.subtitle ? <h5>{comic.subtitle}</h5> : ''}</strong>
+              <strong>
+                {comic.subtitle ? (
+                  <h5 className='text-light'>{comic.subtitle}</h5>
+                ) : (
+                  ''
+                )}
+              </strong>
             </Card.Title>
           </Link>
 

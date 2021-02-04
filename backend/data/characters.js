@@ -93,6 +93,65 @@ const characters = [
     publisher: 'Marvel',
     image: '/images/lightmaster.jpg',
   },
+  {
+    name: 'Human Torch',
+    realName: 'Jonathan Storm',
+    firstAppearance: 'Fantastic Four #1',
+    createdBy: 'Stan Lee, Jack Kirby',
+    homeUniverse: 'Earth-616',
+    good: true,
+    evil: false,
+    status: 'Alive',
+    placeOfBirth: 'Glenville, Long Island, New York',
+    citizenship: 'American',
+    base:
+      'formerly Avengers Mansion, Manhattan, New York City, New York; Schaefer Theater, Manhattan, New York City, New York; Baxter Building, Manhattan, New York City, New York',
+    powers:
+      'Pyrogenesis, Plasma Form, Nova Flame, Flight, Thermokinesis, Superhuman Durability, & Immunity to Fire & Heat.',
+    bio:
+      'Jonathan "Johnny" Storm aka the Human Torch was an American superpowered adventurer. He was a high school student[19] before he was exposed to high levels of cosmic radiation when sister Sue Storm\'s boyfriend and scientist; Dr. Reed Richards took them and pilot Ben Grimm, into space in the stolen rocket; Marvel-1. The radiation mutated him and his friends, turning his entire body into a fiery, plasma-like state.[18] Together they became the Fantastic Four, a team of adventurers who explored space, time and alternate dimensions and saved the world along the way from science-based threats.',
+    publisher: 'Marvel',
+    image: '/images/humantorch.jpg',
+  },
+  {
+    name: 'Hitman',
+    realName: 'Burt Kenyon',
+    firstAppearance: 'Peter Parker, The Spectacular Spider-Man #4',
+    createdBy: 'Archie Goodwin, Sal Buscema',
+    homeUniverse: 'Earth-616',
+    good: false,
+    evil: true,
+    status: 'Alive',
+    placeOfBirth: 'Unknown',
+    citizenship: 'American',
+    base: 'Unknown',
+    powers:
+      'Hitman is an excellent marksman, and is highly skilled in hand-to-hand combat. Normal human strength with intensive exercise.',
+    bio:
+      "Serving in a war, Lt. Burt Kenyon saved his comrade Frank Castle's life by cutting down enemy forces and dragging him to safety. Both Castle and Kenyon assumed this was a life debt. Soon afterward, Kenyon was released from service because he was deemed psychologically unstable. Upon returning to the United States, Kenyon took work for the Maggia as Hitman, a villainous analoge to Frank Castle's emerging vigilante identity of the Punisher. On his first assignment, Hitman ran afoul of Spider-Man by taking a contract on the hero's life. Managing to place a tracer on the villain upon his failure, Spider-Man passed his tracker onto the Punisher who began to hunt his former friend.",
+    publisher: 'Marvel',
+    image: '/images/hitman.jpg',
+  },
+  {
+    name: 'Morbius',
+    realName: 'Dr. Michael Morbius',
+    firstAppearance: 'Amazing Spider-Man #101',
+    createdBy: 'Roy Thomas, Gil Kane',
+    homeUniverse: 'Earth-616',
+    good: false,
+    evil: true,
+    status: 'Alive',
+    placeOfBirth: 'Greece',
+    citizenship: 'Greek',
+    base:
+      'Mobile, formerly; San Francisco, California; New York City, New York, Southampton, Long Island, New York; Greece',
+    powers:
+      'Pseudo-Vampirism, Superhuman Strength, Superhuman Speed, Superhuman Stamina, Superhuman Agility, Superhuman Reflexes, Superhuman Acute Senses, Regenerative Healing Factor, Fangs & Claws, Psionic Gliding, Mesmerism, Vampire Creation, Immunity To Most Vampire Vulnerabilities & Virtual Immortality Also has a Genius Intelligence. ',
+    bio:
+      'Dr. Michael Morbius was a scientist born in Greece who became a Nobel Prize winning biochemist. He suffered from a debilitating blood disease and developed an experimental treatment involving vampire bats and electroshocks. Its side effects turned him into a pseudo-vampire who needed to consume blood in order to survive, and gained typical vampire characteristics such as an aversion to sunlight, and the powers of flight, enhanced strength, speed, and healing (a healing factor). His overall appearance changed as well: he gained fangs, his nose flattened to appear more bat-like, and his skin became extremely pale. Additionally, the victims of his bite would turn into living vampires themselves. When he first experienced the change, he killed the assistant who had helped him develop the treatment.',
+    publisher: 'Marvel',
+    image: '/images/hitman.jpg',
+  },
 ]
 
 export default characters
