@@ -14,7 +14,7 @@ const CharacterScreen = ({ match }) => {
       const { data } = await axios.get(`/api/characters/${match.params.id}`)
       setCharacter(data)
       setLoading(false)
-      console.log(data)
+      // console.log(data)
     }
 
     fetchCharacters()
@@ -54,6 +54,17 @@ const CharacterScreen = ({ match }) => {
                   ''
                 )}
                 <ListGroup.Item>
+                  {character.good ? (
+                    <Badge variant='success' pill>
+                      Hero
+                    </Badge>
+                  ) : (
+                    <Badge className='villain-color' pill>
+                      Villain
+                    </Badge>
+                  )}
+                </ListGroup.Item>
+                <ListGroup.Item>
                   First Appearance: {character.firstAppearance}
                 </ListGroup.Item>
                 <ListGroup.Item>
@@ -66,17 +77,7 @@ const CharacterScreen = ({ match }) => {
                   Home Universe: {character.homeUniverse}
                 </ListGroup.Item>
 
-                <ListGroup.Item>
-                  {character.good ? (
-                    <Badge variant='success' pill>
-                      Hero
-                    </Badge>
-                  ) : (
-                    <Badge className='villain-color' pill>
-                      Villain
-                    </Badge>
-                  )}
-                </ListGroup.Item>
+                <ListGroup.Item></ListGroup.Item>
                 <ListGroup.Item>Status: {character.status}</ListGroup.Item>
                 <ListGroup.Item>
                   Citizenship: {character.citizenship}

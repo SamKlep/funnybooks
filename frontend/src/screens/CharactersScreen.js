@@ -16,7 +16,7 @@ const CharactersScreen = ({ match }) => {
 
   const characterList = useSelector((state) => state.characterList)
   const { loading, error, characters, page, pages } = characterList
-  console.log(characters)
+  // console.log(characters)
   useEffect(() => {
     dispatch(listCharacters(keyword, pageNumber))
   }, [dispatch, keyword, pageNumber])

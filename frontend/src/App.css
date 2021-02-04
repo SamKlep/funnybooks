@@ -46,3 +46,7 @@ a:hover {
 .villain-color {
   background-color: blueviolet !important;
 }
+
+.condition-color {
+  color: yellow;
+}

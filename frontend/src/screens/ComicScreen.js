@@ -14,7 +14,7 @@ const ComicScreen = ({ match }) => {
       const { data } = await axios.get(`/api/comics/${match.params.id}`)
       setComic(data)
       setLoading(false)
-      console.log(data)
+      // console.log(data)
     }
 
     fetchComics()
@@ -58,6 +58,10 @@ const ComicScreen = ({ match }) => {
                 <ListGroup.Item>Publisher: {comic.publisher}</ListGroup.Item>
                 <ListGroup.Item>Writer: {comic.writer}</ListGroup.Item>
                 <ListGroup.Item>Artist: {comic.artist}</ListGroup.Item>
+                <ListGroup.Item>
+                  Condition:{' '}
+                  <span className='condition-color'>{comic.condition}</span>
+                </ListGroup.Item>
                 <ListGroup.Item>
                   Price: <span className='text-success'>${comic.price}</span>
                 </ListGroup.Item>
