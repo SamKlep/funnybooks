@@ -56,6 +56,43 @@ const characters = [
     publisher: 'Marvel',
     image: '/images/kraven.jpg',
   },
+  {
+    name: 'Vulture',
+    realName: 'Adrian Toomes',
+    firstAppearance: 'Amazing Spider-Man #2',
+    createdBy: 'Stan Lee & Steve Ditko',
+    homeUniverse: 'Earth-616',
+    good: false,
+    evil: true,
+    status: 'Alive',
+    placeOfBirth: 'Staten Island, New York',
+    citizenship: 'American',
+    base: 'New York City, New York',
+    powers: 'Temporary/Limited Levitation & Superhuman Strength.',
+    bio:
+      "Young Adrian Toomes' parents died during his early years. Adrian was raised by his older brother Marcus and found intelligent by his teachers at school. His brother Marcus became paraplegic after a motorcycle incident and the tables turned with Adrian looking after him. As an adult, Adrian became an electrical engineer and inventor. Toomes, with his business partner Gregory Bestman, started Bestman and Toomes, a small electronics firm. It was during his time there that Toomes first developed an electromagnetic harness that would allow the wearer to fly. Toomes' excitement at his invention was cut short when he discovered Bestman was embezzling money from the company. When Toomes physically confronted Bestman in his office, he found that exposure to the harness increased his strength. Bestman fired Toomes for attacking him and assumed full control of the company. Toomes retired to a farm on Staten Island and continued to work on his harness. In the meantime, Bestman decided to sell B+T. Learning of this, Toomes adopted the guise of the Vulture, ransacked Bestman's office, and stole his money back. Having enjoyed the experience, Toomes decided to become a costumed criminal full time.",
+    publisher: 'Marvel',
+    image: '/images/vulture.jpg',
+  },
+  {
+    name: 'Lightmaster',
+    realName: 'Edward Lansky',
+    firstAppearance: 'Peter Parker, The Spectacular Spider-Man #1',
+    createdBy: 'Gerry Conway & Sal Buscema',
+    homeUniverse: 'Earth-616',
+    good: false,
+    evil: true,
+    status: 'Alive',
+    placeOfBirth: 'New York City, New York',
+    citizenship: 'American',
+    base: 'New York City, New York',
+    powers:
+      "As a being of pure light, he was able to hide his mind from Cable's telepathy. Lanksy is a doctor in Physics with a knowledge of Optics and Business.",
+    bio:
+      "Dr. Edward Lansky was the vice chancellor of the Empire State University, New York City.[1] The city's mayor was preparing some budget cuts which would have damaged the University. To avoid this, Lansky prepared a criminal attack, hiring Tarantula to stage his own and when that failed to kill Mayor Beame,[1] while at the same time using his knowledge and the University laboratory to create a suit.",
+    publisher: 'Marvel',
+    image: '/images/lightmaster.jpg',
+  },
 ]
 
 export default characters
