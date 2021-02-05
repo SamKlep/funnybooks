@@ -138,4 +138,20 @@ const deleteComic = asyncHandler(async (req, res) => {
   }
 })
 
-export { getComics, getComicById, createComic, deleteComic, updateComic }
+// @desc    Get top rated comics
+// @route   GET /api/comics/top
+// @access  Public
+const getTopComics = asyncHandler(async (req, res) => {
+  const comics = await Comic.find({}).sort({ price: -1 }).limit(6)
+
+  res.json(comics)
+})
+
+export {
+  getComics,
+  getComicById,
+  createComic,
+  deleteComic,
+  updateComic,
+  getTopComics,
+}

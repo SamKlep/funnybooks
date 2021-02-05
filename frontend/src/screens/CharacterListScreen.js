@@ -5,45 +5,49 @@ import { useDispatch, useSelector } from 'react-redux'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
 import Paginate from '../components/Paginate'
-import { listComics, deleteComic, createComic } from '../actions/comicActions'
-import { COMIC_CREATE_RESET } from '../constants/comicConstants'
+import {
+  listCharacters,
+  deleteCharacter,
+  createCharacter,
+} from '../actions/characterActions'
+import { CHARACTER_CREATE_RESET } from '../constants/characterConstants'
 
-const ComicListScreen = ({ history, match }) => {
+const CharacterListScreen = ({ history, match }) => {
   const pageNumber = match.params.pageNumber || 1
 
   const dispatch = useDispatch()
 
-  const comicList = useSelector((state) => state.comicList)
-  const { loading, error, comics, pages, page } = comicList
+  const characterList = useSelector((state) => state.characterList)
+  const { loading, error, characters, pages, page } = characterList
 
-  const comicDelete = useSelector((state) => state.comicDelete)
+  const characterDelete = useSelector((state) => state.characterDelete)
   const {
     loading: loadingDelete,
     error: errorDelete,
     success: successDelete,
-  } = comicDelete
+  } = characterDelete
 
-  const comicCreate = useSelector((state) => state.comicCreate)
+  const characterCreate = useSelector((state) => state.characterCreate)
   const {
     loading: loadingCreate,
     error: errorCreate,
     success: successCreate,
-    comic: createdComic,
-  } = comicCreate
+    character: createdCharacter,
+  } = characterCreate
 
   const userLogin = useSelector((state) => state.userLogin)
   const { userInfo } = userLogin
 
   useEffect(() => {
-    dispatch({ type: COMIC_CREATE_RESET })
+    dispatch({ type: CHARACTER_CREATE_RESET })
     if (!userInfo.isAdmin) {
       history.push('/login')
     }
 
     if (successCreate) {
-      history.push(`/admin/comics/${createdComic._id}/edit`)
+      history.push(`/admin/characters/${createdCharacter._id}/edit`)
     } else {
-      dispatch(listComics('', pageNumber))
+      dispatch(listCharacters('', pageNumber))
     }
   }, [
     dispatch,
@@ -51,29 +55,29 @@ const ComicListScreen = ({ history, match }) => {
     userInfo,
     successDelete,
     successCreate,
-    createdComic,
+    createdCharacter,
     pageNumber,
   ])
 
   const deleteHandler = (id) => {
     if (window.confirm('Are you sure')) {
-      dispatch(deleteComic(id))
+      dispatch(deleteCharacter(id))
     }
   }
 
-  const createComicHandler = () => {
-    dispatch(createComic())
+  const createCharacterHandler = () => {
+    dispatch(createCharacter())
   }
 
   return (
     <>
       <Row className='align-items-center'>
         <Col>
-          <h1>Comics</h1>
+          <h1>Characters</h1>
         </Col>
         <Col className='text-right'>
-          <Button className='my-3' onClick={createComicHandler}>
-            <i className='fas fa-plus'></i> Create Comic
+          <Button className='my-3' onClick={createCharacterHandler}>
+            <i className='fas fa-plus'></i> Create Character
           </Button>
         </Col>
       </Row>
@@ -91,39 +95,26 @@ const ComicListScreen = ({ history, match }) => {
             <thead>
               <tr>
                 <th>ID</th>
-                <th>TITLE</th>
-                <th>SUBTITLE</th>
-                <th>PRICE</th>
-                <th>ISSUE</th>
-                <th>YEAR</th>
-                <th>AGE</th>
-                <th>WRITER</th>
-                <th>ARTIST</th>
-                <th>CHARACTER</th>
+                <th>NAME</th>
+                <th>REAL NAME</th>
+                <th>FIRST APPEARANCE</th>
+                <th>CREATED BY</th>
                 <th>PUBLISHER</th>
-                <th>CONDITTION</th>
-                <th>COUNT</th>
                 <th></th>
               </tr>
             </thead>
             <tbody>
-              {comics.map((comic) => (
-                <tr key={comic._id}>
-                  <td>{comic._id}</td>
-                  <td>{comic.title}</td>
-                  <td>{comic.subtitle}</td>
-                  <td className='text-success'>$ {comic.price}</td>
-                  <td>{comic.issue}</td>
-                  <td>{comic.year}</td>
-                  <td>{comic.age}</td>
-                  <td>{comic.writer}</td>
-                  <td>{comic.artist}</td>
-                  <td>{comic.character}</td>
-                  <td>{comic.publisher}</td>
-                  <td className='condition-color'>{comic.condition}</td>
-                  <td className='text-info'>{comic.countInStock}</td>
+              {characters.map((character) => (
+                <tr key={character._id}>
+                  <td>{character._id}</td>
+                  <td>{character.name}</td>
+                  <td>{character.realName}</td>
+                  <td className='text-info'> {character.firstAppearance}</td>
+                  <td>{character.createdBy}</td>
+                  <td>{character.publisher}</td>
+
                   <td>
-                    <LinkContainer to={`/admin/comics/${comic._id}/edit`}>
+                    <LinkContainer to={`/admin/comics/${character._id}/edit`}>
                       <Button variant='light' className='btn-sm'>
                         <i className=' fas fa-edit'></i>
                       </Button>
@@ -131,7 +122,7 @@ const ComicListScreen = ({ history, match }) => {
                     <Button
                       variant='danger'
                       className='btn-sm'
-                      onClick={() => deleteHandler(comic._id)}>
+                      onClick={() => deleteHandler(character._id)}>
                       <i className='fas fa-trash'></i>
                     </Button>
                   </td>
@@ -146,4 +137,4 @@ const ComicListScreen = ({ history, match }) => {
   )
 }
 
-export default ComicListScreen
+export default CharacterListScreen

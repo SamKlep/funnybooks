@@ -28,7 +28,7 @@ const Comic = ({ comic }) => {
         </Link>
         <Card.Body>
           <Link to={`/comics/${comic._id}`}>
-            <Card.Title as='div'>
+            <Card.Title as='h4'>
               <strong>{comic.title}</strong>
             </Card.Title>
             <Card.Title as='div'>

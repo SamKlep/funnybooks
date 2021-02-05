@@ -16,6 +16,9 @@ import {
   COMIC_UPDATE_SUCCESS,
   COMIC_UPDATE_FAIL,
   COMIC_UPDATE_RESET,
+  COMIC_TOP_REQUEST,
+  COMIC_TOP_SUCCESS,
+  COMIC_TOP_FAIL,
 } from '../constants/comicConstants'
 
 export const comicListReducer = (state = { comics: [] }, action) => {
@@ -90,6 +93,19 @@ export const comicUpdateReducer = (state = { comic: {} }, action) => {
       return { loading: false, error: action.payload }
     case COMIC_UPDATE_RESET:
       return { comic: {} }
+    default:
+      return state
+  }
+}
+
+export const comicTopRatedReducer = (state = { comics: [] }, action) => {
+  switch (action.type) {
+    case COMIC_TOP_REQUEST:
+      return { loading: true, comics: [] }
+    case COMIC_TOP_SUCCESS:
+      return { loading: false, comics: action.payload }
+    case COMIC_TOP_FAIL:
+      return { loading: false, error: action.payload }
     default:
       return state
   }

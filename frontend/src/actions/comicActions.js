@@ -15,6 +15,9 @@ import {
   COMIC_UPDATE_REQUEST,
   COMIC_UPDATE_SUCCESS,
   COMIC_UPDATE_FAIL,
+  COMIC_TOP_REQUEST,
+  COMIC_TOP_FAIL,
+  COMIC_TOP_SUCCESS,
 } from '../constants/comicConstants'
 
 export const listComics = (keyword = '', pageNumber = '') => async (
@@ -148,6 +151,24 @@ export const updateComic = (comic) => async (dispatch, getState) => {
   } catch (error) {
     dispatch({
       type: COMIC_UPDATE_FAIL,
+      payload:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
+    })
+  }
+}
+
+export const listTopComics = () => async (dispatch) => {
+  try {
+    dispatch({ type: COMIC_TOP_REQUEST })
+
+    const { data } = await axios.get(`/api/comics/top`)
+
+    dispatch({ type: COMIC_TOP_SUCCESS, payload: data })
+  } catch (error) {
+    dispatch({
+      type: COMIC_TOP_FAIL,
       payload:
         error.response && error.response.data.message
           ? error.response.data.message
